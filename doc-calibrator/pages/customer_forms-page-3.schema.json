@@ -1,0 +1,26 @@
+{
+  "source": "customer_forms-page-3.pdf",
+  "pages": [
+    {
+      "file": "customer_forms-page-3.pdf",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "fields": [
+    {
+      "id": "customer_forms-page-3.pdf#cert_common_name",
+      "field_key": "cert_common_name",
+      "label": "",
+      "page_file": "customer_forms-page-3.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 184.29816,
+        "cy": 675.4425,
+        "width": 302.62256,
+        "height": 19.514927,
+        "rotation_deg": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "source": "customer_forms-page-2.pdf",
+  "pages": [
+    {
+      "file": "customer_forms-page-2.pdf",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "fields": [
+    {
+      "id": "customer_forms-page-2.pdf#name",
+      "field_key": "name",
+      "label": "",
+      "page_file": "customer_forms-page-2.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 190.83377,
+        "cy": 621.76,
+        "width": 159.20662,
+        "height": 23.433027,
+        "rotation_deg": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "source": "customer_forms-page-1.pdf",
+  "pages": [
+    {
+      "file": "customer_forms-page-1.pdf",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    }
+  ],
+  "fields": [
+    {
+      "id": "customer_forms-page-1.pdf#issued_to_signature",
+      "field_key": "issued_to_signature",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 238.33365,
+        "cy": 749.5513,
+        "width": 207.39285,
+        "height": 21.754772,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#Issued_to_name_grade_orgn",
+      "field_key": "Issued_to_name_grade_orgn",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 200.95576,
+        "cy": 719.83057,
+        "width": 280.83493,
+        "height": 13.961284,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#serial_number_1",
+      "field_key": "serial_number_1",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 119.24729,
+        "cy": 685.3001,
+        "width": 127.84867,
+        "height": 18.808807,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#discription_of_item_1",
+      "field_key": "discription_of_item_1",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 357.0538,
+        "cy": 682.0405,
+        "width": 289.54797,
+        "height": 19.574034,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#date_of_issue",
+      "field_key": "date_of_issue",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 470.93304,
+        "cy": 715.2014,
+        "width": 62.058872,
+        "height": 11.251791,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#serial_number_2",
+      "field_key": "serial_number_2",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 117.728325,
+        "cy": 663.12,
+        "width": 134.28255,
+        "height": 14.102502,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#discription_of_item_2",
+      "field_key": "discription_of_item_2",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 358.4923,
+        "cy": 660.57965,
+        "width": 281.59366,
+        "height": 16.04349,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#serial_number_3",
+      "field_key": "serial_number_3",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 123.74508,
+        "cy": 639.35693,
+        "width": 124.44291,
+        "height": 15.682221,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#discription_of_item_3",
+      "field_key": "discription_of_item_3",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 351.99933,
+        "cy": 638.797,
+        "width": 283.4525,
+        "height": 15.91541,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#discription_of_item_4",
+      "field_key": "discription_of_item_4",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 355.42163,
+        "cy": 614.937,
+        "width": 296.66174,
+        "height": 14.148483,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#serial_number_4",
+      "field_key": "serial_number_4",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 112.74615,
+        "cy": 619.04065,
+        "width": 148.83823,
+        "height": 21.377073,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#discription_of_item_5",
+      "field_key": "discription_of_item_5",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 355.658,
+        "cy": 594.4171,
+        "width": 290.55295,
+        "height": 17.18313,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#serial_number_5",
+      "field_key": "serial_number_5",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 118.03541,
+        "cy": 592.3004,
+        "width": 137.59628,
+        "height": 17.849821,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#POC_name",
+      "field_key": "POC_name",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 372.97083,
+        "cy": 525.58606,
+        "width": 252.9977,
+        "height": 15.784038,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#POC_unit_org",
+      "field_key": "POC_unit_org",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 390.30014,
+        "cy": 501.99542,
+        "width": 233.36787,
+        "height": 15.711797,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#POC_contact_number",
+      "field_key": "POC_contact_number",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 407.2944,
+        "cy": 481.02393,
+        "width": 192.99481,
+        "height": 18.933626,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#ticket_number",
+      "field_key": "ticket_number",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 386.29837,
+        "cy": 456.9029,
+        "width": 233.89009,
+        "height": 17.590364,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#yes",
+      "field_key": "yes",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 173.77214,
+        "cy": 395.2628,
+        "width": 19.087978,
+        "height": 13.849626,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#no",
+      "field_key": "no",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 195.4695,
+        "cy": 396.47137,
+        "width": 16.621517,
+        "height": 15.393193,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#enable_wifi",
+      "field_key": "enable_wifi",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 510.43265,
+        "cy": 415.9502,
+        "width": 58.09153,
+        "height": 16.371914,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#install_vpn",
+      "field_key": "install_vpn",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 449.27356,
+        "cy": 414.79895,
+        "width": 47.398083,
+        "height": 12.893903,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#unlock_local_acount",
+      "field_key": "unlock_local_acount",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 367.1955,
+        "cy": 414.1225,
+        "width": 96.90135,
+        "height": 17.780853,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#add_to_domain",
+      "field_key": "add_to_domain",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 278.90375,
+        "cy": 413.3342,
+        "width": 59.589157,
+        "height": 15.711761,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#reimage",
+      "field_key": "reimage",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 208.32559,
+        "cy": 415.47232,
+        "width": 39.82464,
+        "height": 12.072832,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#remarks",
+      "field_key": "remarks",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 318.08963,
+        "cy": 379.57233,
+        "width": 402.38773,
+        "height": 17.872816,
+        "rotation_deg": 0.47277832
+      }
+    },
+    {
+      "id": "customer_forms-page-1.pdf#customer_intial",
+      "field_key": "customer_intial",
+      "label": "",
+      "page_file": "customer_forms-page-1.pdf",
+      "kind": "Text",
+      "rect": {
+        "cx": 536.01184,
+        "cy": 399.01,
+        "width": 69.16271,
+        "height": 16.490156,
+        "rotation_deg": 0.0
+      }
+    }
+  ]
+}

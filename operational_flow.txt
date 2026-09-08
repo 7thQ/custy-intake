@@ -1,0 +1,31 @@
+
+
+based off whats cuurently built i like it thus far, lets first fix up the landing page, first it should read "Bonjourno,\n\r Welcome to the \n\r client Systems Technician shop" then on the top let corner is a sandwhich stack that holds other links links to the other portals (admin,Neets,Lra,CSt) which is only for the Technician they can click on it but wont have access with out the passwords, the landing page is the customer facing page 1 basically as it is right now execpt will have more options and the chat bot on the left for now leave the chat bot window empty but do create the space for it.
+
+
+the program will have 5 diferernt job/main pages:
+
+admin portal page flow:
+-page 1; presents a list of options that admins have like ability to calibrate documents and thats its for now 
+
+CST page flow;
+-page 1; ability see a rows of customer that have signed in and colums consist of (Rank + name or jsut name if a local national or contractor) , discription of vist and last the ability for the CST to remove them from the quene 
+
+Neets page flow:
+-page 1;  ability see a rows of customer that have signed in and colums consist of (Rank + name or jsut name if a local national or contractor) , discription of vist and last the ability for the Neets agent to remove them from the quene 
+
+LRA page flow:
+-page 1; ability see a rows of customer that have signed in and colums consist of (Rank + name or jsut name if a local national or contractor) , discription of vist and last the ability for the Neets agent to remove them from the quene 
+
+customer facing page flow:
+-page 1; will be devided in half on one side being a list of options to select forms to fill out or any other option i choose to display the second half of the page will be a llm chat bot that can interpet what the custoer need based off what they inputted (because the customer may not know what they are looking for or understand which of the listed options on the other side help them the best)
+
+-page 2; will depend on what they chose for now we will leave at this.
+
+
+######## these are just the rough draft once you build a working web page that includes all this we will move foward first starting with the customer facing page becasue that ultimately controls the rest of the operation 
+
+every signle page besides the customer facing one requires a pass word
+cst page = cstP0tal
+LRA page = LRAP0rtal
+Neets = Neets 

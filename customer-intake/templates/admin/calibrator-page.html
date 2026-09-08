@@ -1,0 +1,32 @@
+<title>Calibrate Page</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page" style="max-width: 1200px;">
+  <div class="bar">
+    <h1>Calibrate</h1>
+    <div class="spacer"></div>
+    <button class="secondary" onclick="window.location.href='/admin/calibrator'">&lt; Back</button>
+  </div>
+  <p class="subtitle" id="opened-label">Opened: —</p>
+  <div id="page-error" class="status error" hidden></div>
+
+  <div class="calibrator-layout" id="editor" hidden>
+    <div class="calibrator-canvas-wrap">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="calibrator-panel">
+      <h2>Fields</h2>
+      <p class="hint">Drag on the image to add a box.</p>
+      <p class="hint">Drag the dot above a selected box to rotate it.</p>
+
+      <button id="save-btn" style="width:100%">Save Schema</button>
+      <div id="schema-status" class="status" hidden></div>
+
+      <div class="field-list" id="field-list"></div>
+      <p id="no-fields" class="subtitle" hidden>No fields on this page yet.</p>
+    </div>
+  </div>
+</div>
+
+<script src="/static/admin/calibrator.js"></script>

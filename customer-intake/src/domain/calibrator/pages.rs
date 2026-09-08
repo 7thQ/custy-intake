@@ -4,8 +4,8 @@ use std::path::{Path, PathBuf};
 use anyhow::{Context, Result};
 
 /// Every imported document page lives here. Delegates to `forms_core`
-/// so `doc-calibrator` and `customer-intake` always agree on the same
-/// physical folder.
+/// so the customer-facing intake flow and the admin calibrator always
+/// agree on the same physical folder.
 pub fn pages_dir() -> PathBuf {
     forms_core::pages_dir()
 }
@@ -95,7 +95,7 @@ mod tests {
         // fixtures, and cargo runs tests in parallel by default, so
         // writing into that same shared directory races with those
         // reads (import_pdf's save() can be caught mid-write).
-        let dir = std::env::temp_dir().join("doc-calibrator-import-test");
+        let dir = std::env::temp_dir().join("admin-calibrator-import-test");
         let _ = fs::remove_dir_all(&dir);
 
         let source = Path::new(env!("CARGO_MANIFEST_DIR")).join("../customer_forms.pdf");

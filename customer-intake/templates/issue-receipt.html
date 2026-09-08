@@ -1,0 +1,82 @@
+<title>Temporary Issue Receipt</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page">
+  <div class="bar">
+    <h1>Temporary Issue Receipt</h1>
+  </div>
+
+  <div class="bar">
+    <button class="secondary" onclick="window.location.href='/'">&lt; Back</button>
+    <div class="spacer"></div>
+    <button id="submit-btn">Submit</button>
+  </div>
+  <div id="status" class="status" hidden></div>
+
+  <div id="schema-error" class="status error" hidden></div>
+
+  <div id="form-card" class="card" hidden>
+    <div class="field-grid" id="fixed-fields">
+      <label>Issued To:</label>
+      <div>
+        <select id="issuer-select">
+          <option value="">Select who is issuing this...</option>
+        </select>
+        <div id="issuers-error" class="status error" hidden></div>
+      </div>
+
+      <label>Number of Items:</label>
+      <select id="item-count">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <div id="item-rows"></div>
+
+      <label>Date of Issue:</label>
+      <div id="date-of-issue"></div>
+
+      <label>POC Name:</label>
+      <input type="text" id="f-POC_name">
+
+      <label>POC Unit/Org:</label>
+      <input type="text" id="f-POC_unit_org">
+
+      <label>POC Contact Number:</label>
+      <input type="text" id="f-POC_contact_number">
+
+      <label>Ticket Number:</label>
+      <input type="text" id="f-ticket_number">
+
+      <label>Was Data Backed Up?:</label>
+      <select id="backed-up-select">
+        <option value="">Select...</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label>Select All That Apply:</label>
+      <details class="checklist" id="apply-options">
+        <summary id="apply-options-summary">None selected</summary>
+        <div class="options" id="apply-options-list"></div>
+      </details>
+
+      <label>Remarks:</label>
+      <input type="text" id="f-remarks">
+
+      <label>Customer Initials:</label>
+      <input type="text" id="f-customer_intial">
+    </div>
+
+    <div id="extra-fields-section" hidden>
+      <hr>
+      <p><strong>Other fields:</strong></p>
+      <div class="field-grid" id="extra-fields"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/static/issue-receipt.js"></script>

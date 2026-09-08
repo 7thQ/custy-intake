@@ -1,0 +1,18 @@
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page">
+  <div class="bar">
+    <h1>Admin</h1>
+    <div class="spacer"></div>
+    <form method="POST" action="/admin/logout">
+      <button type="submit" class="secondary">Log Out</button>
+    </form>
+  </div>
+
+  <div class="home-menu">
+    <button onclick="window.location.href='/admin/calibrator'">Document Calibrator</button>
+  </div>
+
+  <div class="admin-footer"><a class="link" href="/">Back to site</a></div>
+</div>

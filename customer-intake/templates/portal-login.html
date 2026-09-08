@@ -1,0 +1,32 @@
+<title>Portal Login</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page">
+  <div class="login-wrap card">
+    <h1 id="portal-title">Portal</h1>
+    <p class="subtitle">Enter the portal password to continue.</p>
+
+    <div id="error" class="status error" hidden>Incorrect password.</div>
+
+    <form method="POST">
+      <div style="margin-bottom: 12px;">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autofocus required>
+      </div>
+      <button type="submit" style="width:100%">Log In</button>
+    </form>
+
+    <div class="admin-footer"><a class="link" href="/">Back to site</a></div>
+  </div>
+</div>
+
+<script>
+  const PORTAL_NAMES = { admin: 'Admin', cst: 'CST', neets: 'Neets', lra: 'LRA' };
+  const portalId = window.location.pathname.split('/')[1];
+  document.title = `${PORTAL_NAMES[portalId] ?? 'Portal'} Login`;
+  document.getElementById('portal-title').textContent = PORTAL_NAMES[portalId] ?? 'Portal';
+
+  if (new URLSearchParams(window.location.search).get('error') === '1') {
+    document.getElementById('error').hidden = false;
+  }
+</script>

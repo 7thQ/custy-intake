@@ -1,0 +1,58 @@
+<title>CST Shop</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page home-page">
+  <div class="home-topbar">
+    <button id="menu-btn" class="hamburger-btn" aria-label="Staff portals" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="portal-menu" class="portal-menu" hidden>
+      <a class="link" href="/admin">Admin</a>
+      <a class="link" href="/cst">CST</a>
+      <a class="link" href="/neets">Neets</a>
+      <a class="link" href="/lra">LRA</a>
+    </nav>
+  </div>
+
+  <h1>Bonjourno,<br>Welcome to the<br>client Systems Technician shop</h1>
+
+  <div id="status" class="status" hidden></div>
+
+  <div class="home-split">
+    <div class="card chat-panel">
+      <h2>Chat Assistant</h2>
+      <div class="chat-messages"></div>
+      <input type="text" class="chat-input-placeholder" placeholder="Chat coming soon..." disabled>
+    </div>
+
+    <div class="card options-panel">
+      <h2>What are you looking for?</h2>
+      <div class="home-menu">
+        <button onclick="window.location.href='/issue-receipt'">Temporary Issue Receipt (device intake)</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const statusEl = document.getElementById('status');
+  const message = sessionStorage.getItem('cst_status');
+  if (message) {
+    statusEl.textContent = message;
+    statusEl.hidden = false;
+  }
+
+  const menuBtn = document.getElementById('menu-btn');
+  const portalMenu = document.getElementById('portal-menu');
+  menuBtn.addEventListener('click', () => {
+    const open = !portalMenu.hidden;
+    portalMenu.hidden = open;
+    menuBtn.setAttribute('aria-expanded', String(!open));
+  });
+  document.addEventListener('click', (event) => {
+    if (!portalMenu.hidden && !portalMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+      portalMenu.hidden = true;
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

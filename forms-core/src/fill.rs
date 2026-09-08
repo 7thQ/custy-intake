@@ -269,7 +269,7 @@ mod tests {
 
     #[test]
     fn fills_real_page_with_rotation_correction() {
-        let pages_dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("../doc-calibrator/pages");
+        let pages_dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("../pages");
         let schema = Schema {
             source: "customer_forms.pdf".into(),
             pages: vec![PageInfo {

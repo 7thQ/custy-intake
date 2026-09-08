@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "customer-intake",
+      "runtimeExecutable": "cargo",
+      "runtimeArgs": ["run", "-p", "customer-intake"],
+      "port": 3000
+    }
+  ]
+}

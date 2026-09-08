@@ -1,13 +1,13 @@
 use std::path::PathBuf;
 
 use anyhow::{Context, Result};
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 /// One person who can issue equipment. `name` stands in for a real
 /// signature (we can't render an actual signature image), while
 /// `name_grade_org` is the fuller "Name, Grade, Org" line the form
 /// prints separately.
-#[derive(Debug, Clone, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Issuer {
     pub name: String,
     pub name_grade_org: String,

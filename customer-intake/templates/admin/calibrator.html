@@ -1,0 +1,89 @@
+<title>Document Calibrator</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page">
+  <div class="bar">
+    <h1>Document Calibrator</h1>
+    <div class="spacer"></div>
+    <button class="secondary" onclick="window.location.href='/admin/dashboard'">&lt; Back</button>
+  </div>
+
+  <div class="card">
+    <h2>Open PDF...</h2>
+    <p class="subtitle">Import a scanned document — it's split into one page file per page.</p>
+    <input type="file" id="file-input" accept="application/pdf">
+    <div style="margin-top: 10px;">
+      <button id="import-btn">Import</button>
+    </div>
+    <div id="import-status" class="status" hidden></div>
+  </div>
+
+  <div class="card">
+    <h2>Calibrate a Page...</h2>
+    <ul class="page-list" id="page-list"></ul>
+    <p id="no-pages" class="subtitle" hidden>No pages found yet — import a PDF above.</p>
+  </div>
+</div>
+
+<script>
+  const fileInput = document.getElementById('file-input');
+  const importBtn = document.getElementById('import-btn');
+  const importStatus = document.getElementById('import-status');
+  const pageList = document.getElementById('page-list');
+  const noPages = document.getElementById('no-pages');
+
+  function showImportStatus(message, isError) {
+    importStatus.textContent = message;
+    importStatus.hidden = false;
+    importStatus.classList.toggle('error', !!isError);
+  }
+
+  async function loadPages() {
+    const res = await fetch('/admin/api/pages');
+    if (res.status === 401) {
+      window.location.href = '/admin/login';
+      return;
+    }
+    const files = await res.json();
+    pageList.innerHTML = '';
+    noPages.hidden = files.length > 0;
+    files.forEach((file) => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.textContent = file;
+      btn.onclick = () => {
+        window.location.href = `/admin/calibrator/page/${encodeURIComponent(file)}`;
+      };
+      li.appendChild(btn);
+      pageList.appendChild(li);
+    });
+  }
+
+  importBtn.addEventListener('click', async () => {
+    const file = fileInput.files[0];
+    if (!file) {
+      showImportStatus('Choose a PDF file first.', true);
+      return;
+    }
+    importBtn.disabled = true;
+    try {
+      const form = new FormData();
+      form.append('file', file, file.name);
+      const res = await fetch('/admin/api/pages/import', { method: 'POST', body: form });
+      if (!res.ok) {
+        showImportStatus((await res.text()) || 'Failed to import document.', true);
+        return;
+      }
+      const data = await res.json();
+      showImportStatus(`Imported '${file.name}' into ${data.written.length} page file(s).`, false);
+      fileInput.value = '';
+      loadPages();
+    } catch (err) {
+      showImportStatus(`Failed to import document: ${err}`, true);
+    } finally {
+      importBtn.disabled = false;
+    }
+  });
+
+  loadPages();
+</script>

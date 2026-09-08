@@ -1,0 +1,32 @@
+<title>Queue</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page">
+  <div class="bar">
+    <h1 id="portal-title">Queue</h1>
+    <div class="spacer"></div>
+    <form method="POST" id="logout-form">
+      <button type="submit" class="secondary">Log Out</button>
+    </form>
+  </div>
+
+  <div id="error" class="status error" hidden></div>
+
+  <div class="card">
+    <table class="queue-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description of Visit</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="queue-rows"></tbody>
+    </table>
+    <p id="empty-message" class="subtitle" hidden>No customers currently waiting.</p>
+  </div>
+
+  <div class="admin-footer"><a class="link" href="/">Back to site</a></div>
+</div>
+
+<script src="/static/queue.js"></script>

@@ -1,1 +1,4 @@
 target/
+/customer-intake/submissions/
+/customer-intake/completed_forms/
+/customer-intake/queues/

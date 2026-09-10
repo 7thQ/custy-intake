@@ -1,8 +1,13 @@
 (() => {
-  // Same address this browser itself used to load the page — always
-  // correct for whatever machine/IP the lobby display is running on,
-  // no server round-trip needed.
-  document.getElementById('staff-url').textContent = `${window.location.origin}/staff`;
+  // Fetched from the server rather than built from
+  // window.location.origin — the server applies the same
+  // localhost/0.0.0.0 substitution it uses for the QR code, so this
+  // can't end up showing a dead address either if the lobby display
+  // was opened via one of those instead of its real LAN IP.
+  fetch('/api/staff-url')
+    .then((res) => res.json())
+    .then(({ url }) => { document.getElementById('staff-url').textContent = url; })
+    .catch(() => {});
 
   const rowsEl = document.getElementById('queue-rows');
   const emptyEl = document.getElementById('empty-message');

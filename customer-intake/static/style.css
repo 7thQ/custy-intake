@@ -419,7 +419,11 @@ label {
 .qr-large {
   width: 150px;
   height: 150px;
-  background: #14161b;
+  /* White, matching the QR SVG's own background now that it's
+     standard dark-on-light (inverted colors aren't reliably
+     scannable) — a dark card here would fight the SVG's own quiet
+     zone instead of framing it. */
+  background: #ffffff;
   border-radius: 6px;
   padding: 8px;
 }

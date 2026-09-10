@@ -10,6 +10,7 @@ pub mod calibrator;
 pub mod db;
 pub mod issue_receipt;
 pub mod issuers;
+pub mod network;
 pub mod portal;
 pub mod qr;
 pub mod sign_in;

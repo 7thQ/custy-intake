@@ -1,0 +1,38 @@
+<title>Sign In</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page">
+  <h1>Sign In</h1>
+  <p class="subtitle">Fill out the fields below to get started.</p>
+
+  <div id="error" class="status error" hidden></div>
+
+  <form id="sign-in-form" class="card">
+    <div class="field-grid">
+      <label for="name">Name</label>
+      <input type="text" id="name">
+
+      <label for="rank">Rank <span class="optional-note">(optional)</span></label>
+      <input type="text" id="rank">
+
+      <label for="squadron">Squadron</label>
+      <input type="text" id="squadron">
+
+      <label for="reason">Reason for Visit</label>
+      <input type="text" id="reason">
+
+      <label for="ticket">Ticket Number <span class="optional-note">(optional)</span></label>
+      <input type="text" id="ticket">
+
+      <label>Time In</label>
+      <div id="time-in" class="readonly-value"></div>
+
+      <label>Date</label>
+      <div id="sign-in-date" class="readonly-value"></div>
+    </div>
+
+    <button type="submit" id="submit-btn" class="submit-btn">Submit</button>
+  </form>
+</div>
+
+<script src="/static/sign-in.js"></script>

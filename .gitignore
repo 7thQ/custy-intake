@@ -1,4 +1,5 @@
 target/
-/customer-intake/submissions/
 /customer-intake/completed_forms/
-/customer-intake/queues/
+/customer-intake/shop.sqlite
+/customer-intake/shop.sqlite-shm
+/customer-intake/shop.sqlite-wal

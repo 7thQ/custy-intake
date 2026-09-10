@@ -1,0 +1,44 @@
+<title>CST Shop</title>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="page home-page lobby-page">
+  <h1>Bonjourno,<br>Welcome to the<br>client Systems Technician shop</h1>
+
+  <div class="lobby-top">
+    <div class="card qr-panel">
+      <p>
+        Please scan the QR code to sign in.<br>
+        <strong>MUST</strong> be signed into building wifi<br>
+        Name: <strong>BLD1442</strong><br>
+        Password: <strong>Av14n0@1442</strong>
+      </p>
+      <img src="/api/qr/sign-in" alt="Scan to sign in" class="qr-large">
+      <p>Have a seat — a technician will call for you, or watch the queue below.</p>
+
+      <div class="staff-link">
+        CST: go to <code id="staff-url"></code>
+      </div>
+    </div>
+
+    <div class="card art-panel">
+      <div class="art-placeholder">Ambient display<br>coming soon</div>
+    </div>
+  </div>
+
+  <div class="card queue-panel">
+    <h2>Queue</h2>
+    <table class="queue-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description of Visit</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody id="queue-rows"></tbody>
+    </table>
+    <p id="empty-message" class="subtitle" hidden>No customers currently waiting.</p>
+  </div>
+</div>
+
+<script src="/static/lobby.js"></script>

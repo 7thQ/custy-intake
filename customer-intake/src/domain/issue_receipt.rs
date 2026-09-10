@@ -104,12 +104,12 @@ pub fn extra_fields(fields: &[Field]) -> Vec<ExtraField> {
 /// `/admin/calibrator` tool) verified against — this is the actual
 /// finished document, standing in for a print job until there's a
 /// printer to send it to. Written to its own subfolder under
-/// `completed_forms/`, named with `id` so it's easy to match back to
-/// the submission JSON that shares the same id.
-pub fn fill_completed_pdf(id: i64, answers: &BTreeMap<String, String>) -> Result<PathBuf> {
+/// `completed_forms/`, named with `session_token` so it's easy to
+/// match back to the sign-in that produced it.
+pub fn fill_completed_pdf(session_token: &str, answers: &BTreeMap<String, String>) -> Result<PathBuf> {
     let schema = Schema::load(&schema_path())?;
 
-    let out_dir = storage::completed_forms_dir().join(format!("temporary_issue_receipt-{id}"));
+    let out_dir = storage::completed_forms_dir().join(format!("temporary_issue_receipt-{session_token}"));
     let written = forms_core::fill_pages(&forms_core::pages_dir(), &schema, answers, &out_dir)?;
     if written.is_empty() {
         anyhow::bail!("schema has no pages to fill");
@@ -248,8 +248,7 @@ mod tests {
             answers.insert(key.to_string(), value.to_string());
         }
 
-        let id = 999_000_111;
-        let out_dir = fill_completed_pdf(id, &answers).unwrap();
+        let out_dir = fill_completed_pdf("test-session-999000111", &answers).unwrap();
         let filled_page = out_dir.join("customer_forms-page-1.pdf");
         assert!(filled_page.exists());
 

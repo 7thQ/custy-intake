@@ -231,11 +231,12 @@
       if (data.ok) {
         // The submission itself is what matters most and is saved
         // above; filling the PDF is best-effort on top of that. Either
-        // way the ticket is captured, so we still return Home for the
-        // next customer even if the fill failed — the error just
-        // surfaced in the status message carried over to Home.
-        sessionStorage.setItem('cst_status', data.message);
-        window.location.href = '/';
+        // way the customer is now on the queue, so the form is done —
+        // show that inline rather than navigating anywhere (there's
+        // nothing on this phone to go back to).
+        formCard.hidden = true;
+        submitBtn.hidden = true;
+        showStatus(`${data.message}\n\nHave a seat — a technician will call for you.`, false);
         return;
       }
       showStatus(data.message, true);

@@ -7,25 +7,17 @@ use serde::Deserialize;
 
 use crate::AppState;
 use crate::domain::portal::Portal;
+use crate::web::cookies;
 
 fn cookie_name(portal: Portal) -> String {
     format!("{}_session", portal.id)
 }
 
-fn cookie_value<'a>(headers: &'a HeaderMap, name: &str) -> Option<&'a str> {
-    let raw = headers.get(header::COOKIE)?.to_str().ok()?;
-    raw.split(';').find_map(|pair| {
-        let pair = pair.trim();
-        let (key, value) = pair.split_once('=')?;
-        (key == name).then_some(value)
-    })
-}
-
 pub fn is_authenticated(portal: Portal, headers: &HeaderMap, state: &AppState) -> bool {
-    let Some(token) = cookie_value(headers, &cookie_name(portal)) else {
+    let Some(token) = cookies::read(headers, &cookie_name(portal)) else {
         return false;
     };
-    state.sessions.is_valid(portal.id, token)
+    state.sessions.is_valid(portal.id, &token)
 }
 
 /// Gate for a portal *page* route: redirects to that portal's login
@@ -76,7 +68,7 @@ async fn login_submit(portal: Portal, State(state): State<AppState>, Form(form):
     match state.sessions.login(&portal, &form.password) {
         Some(token) => {
             let mut response = Redirect::to(portal.home_path).into_response();
-            let cookie = format!("{}={token}; Path=/; HttpOnly; SameSite=Lax", cookie_name(portal));
+            let cookie = cookies::set(&cookie_name(portal), &token);
             response.headers_mut().insert(header::SET_COOKIE, cookie.parse().unwrap());
             response
         }
@@ -85,12 +77,12 @@ async fn login_submit(portal: Portal, State(state): State<AppState>, Form(form):
 }
 
 async fn logout(portal: Portal, State(state): State<AppState>, headers: HeaderMap) -> Response {
-    if let Some(token) = cookie_value(&headers, &cookie_name(portal)) {
-        state.sessions.logout(portal.id, token);
+    if let Some(token) = cookies::read(&headers, &cookie_name(portal)) {
+        state.sessions.logout(portal.id, &token);
     }
 
     let mut response = Redirect::to(&format!("/{}/login", portal.id)).into_response();
-    let cleared = format!("{}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0", cookie_name(portal));
+    let cleared = cookies::clear(&cookie_name(portal));
     response.headers_mut().insert(header::SET_COOKIE, cleared.parse().unwrap());
     response
 }

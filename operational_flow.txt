@@ -18,7 +18,7 @@ LRA page flow:
 -page 1; ability see a rows of customer that have signed in and colums consist of (Rank + name or jsut name if a local national or contractor) , discription of vist and last the ability for the Neets agent to remove them from the quene 
 
 customer facing page flow:
--page 1; will be devided in half on one side being a list of options to select forms to fill out or any other option i choose to display the second half of the page will be a llm chat bot that can interpet what the custoer need based off what they inputted (because the customer may not know what they are looking for or understand which of the listed options on the other side help them the best)
+-page 1; will be devided in half on one side being a li*temporary  datast of options to select forms to fill out or any other option i choose to display the second half of the page will be a llm chat bot that can interpet what the custoer need based off what they inputted (because the customer may not know what they are looking for or understand which of the listed options on the other side help them the best)
 
 -page 2; will depend on what they chose for now we will leave at this.
 
@@ -29,3 +29,24 @@ every signle page besides the customer facing one requires a pass word
 cst page = cstP0tal
 LRA page = LRAP0rtal
 Neets = Neets 
+
+
+
+sqllite data base should be built out like this:
+-table for sign ins being started  *temporary  data table
+- table for service selected that uses session ID generated and holds chosen service input fields data *temporary  data table (each service has it own table and the session ID is what links it back to the user that signed in)
+-table of sign ins  *permanent  data table
+-permanent tables of services 
+
+ok for clarification on all your questions 
+-yes what i described is a passive lobby display that once the QR code is scanned will open up a new page that ask for the sign in information needed that being (Name, Rank Squadron, reason for visit, time in, date, ticket number (If applicable)) for "Time in" just fill that out automatically depending on the computers current time as well at the "date", all fields must be filled out besides ticket number, now sense we want to track a users session we will scrap the json file and just use a sql table for for that will be temporary and then the final results will be a on a permanent table that will hold the data also create a unique session token to create a data that can be useful and relational data bases,  so once the sign in fields are statisfied the submit but will highlight green changing from red to green and being disabled while red, if they do click it make sure to highlight the field not filled out, Once the green button is pressed thats when the portal with the chat bot and the option list will be displayed the user sign in is still not going to displayed on the general queue until they complete the rest but for now this is how the flow will go. on the pick a service screen we will remove the sandwhich that contains the routes to the admin and all other portals and instead on the landing page add a small QR code that will open up a page that dipslays all the options and lable that QR code "For CSTs only" it doesnt matter that the publich will be able to see the code becasue all the portals  have a password anyways. 
+
+
+-yes the general queue is a just in general where all the sign in will go and will be displayed from from there depending on which portal your looking at the queue from youll see the sign ins relevant to that portal, 
+
+
+
+
+ok couple corrections on the lobby display thats where both qr codes will go the one for the customers and the CSTs but the CSTs one will be smaller. it will not be on the pick a service page the only thing on that page is the chat bot and the service list. 
+
+next a sign in, only becomes permanent when the user is removed of the queue but to get place on the queue they have to first submit everything like sign in info and serivce selected required info, once all that info is collected they are placed in the temporary tables which will then display the user in the queue itll show there name and rank(if applicable)  and becasue some customers dont have rank so make the rank a optional field when users are signing in. only when a customer is removed in from the main queue then thats when the data get moved to the permanent tables 

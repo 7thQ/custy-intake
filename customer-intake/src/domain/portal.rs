@@ -1,7 +1,7 @@
 use std::collections::{HashMap, HashSet};
 use std::sync::{Arc, Mutex};
 
-use rand::RngExt;
+use crate::domain::token::random_hex_token;
 
 /// A password-gated section of the site. Every non-customer-facing page
 /// (admin, and each of the CST/Neets/LRA queues) is one of these,
@@ -69,7 +69,7 @@ impl Sessions {
         if password != portal.password {
             return None;
         }
-        let token = generate_token();
+        let token = random_hex_token();
         self.0
             .lock()
             .unwrap()
@@ -94,11 +94,6 @@ impl Sessions {
     }
 }
 
-/// A fresh 256-bit token, hex-encoded.
-fn generate_token() -> String {
-    let mut rng = rand::rng();
-    format!("{:032x}{:032x}", rng.random::<u128>(), rng.random::<u128>())
-}
 
 #[cfg(test)]
 mod tests {
